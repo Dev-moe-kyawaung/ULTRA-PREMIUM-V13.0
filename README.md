@@ -13,7 +13,7 @@
 
 ## 🎯 Live Demo
 
-**[View Live Portfolio →](https://moekyawaung13721.github.io/portfolio/)**
+**[View Live Portfolio →](https://github.com/Dev-Moe-kyawaug/ULTRA-PREMIUM-V13)**
 
 ---
 
@@ -82,7 +82,7 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/moekyawaung13721/portfolio-v13.git
+git clone https://github.com/Dev-Moe-kyawaug/ULTRA-PREMIUM-V13.git
 cd portfolio-v13
 
 # Install dependencies
