@@ -169,3 +169,155 @@ const ContactV13 = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={errors
+
+                    className={errors.email && touched.email ? 'error' : formData.email ? 'valid' : ''}
+                    placeholder="your@email.com"
+                  />
+                  {errors.email && touched.email && <span className="error-msg">{errors.email}</span>}
+                </div>
+              </div>
+
+              <div className="form-group-v13">
+                <label>ဖုန်းနံပါတ် / Phone (Optional)</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+95 9 123 456 789"
+                />
+              </div>
+
+              <div className="form-group-v13">
+                <label>ခေါင်းစဉ် / Subject *</label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.subject && touched.subject ? 'error' : formData.subject ? 'valid' : ''}
+                  placeholder="Project inquiry"
+                />
+                {errors.subject && touched.subject && <span className="error-msg">{errors.subject}</span>}
+              </div>
+
+              <div className="form-group-v13">
+                <label>မက်ဆေ့ချ် / Message *</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  rows="6"
+                  className={errors.message && touched.message ? 'error' : formData.message ? 'valid' : ''}
+                  placeholder="Tell me about your project..."
+                ></textarea>
+                {errors.message && touched.message && <span className="error-msg">{errors.message}</span>}
+              </div>
+
+              <button type="submit" disabled={isSubmitting} className={`submit-btn-v13 ${isSubmitting ? 'submitting' : ''} ${submitSuccess ? 'success' : ''}`}>
+                {isSubmitting ? (
+                  <>
+                    <span className="btn-spinner"></span>
+                    <span>Sending...</span>
+                  </>
+                ) : submitSuccess ? (
+                  <>
+                    <i className="fas fa-check"></i>
+                    <span>Message Sent!</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Send Message</span>
+                    <i className="fas fa-paper-plane"></i>
+                  </>
+                )}
+                <div className="btn-glow-v13"></div>
+              </button>
+
+              {submitSuccess && (
+                <div className="success-message-v13">
+                  ကျေးဇူးတင်ပါတယ်! သင့်မက်ဆေ့ချ် ပို့ပြီးပါပြီ။<br />
+                  Thank you! Your message has been sent successfully.
+                </div>
+              )}
+            </form>
+          </div>
+
+          {/* Contact Info */}
+          <div className="contact-info-v13">
+            <div className="info-card-v13">
+              <h3>Contact Information</h3>
+              
+              <div className="info-items-v13">
+                <div className="info-item-v13">
+                  <div className="info-icon-v13">
+                    <i className="fas fa-envelope"></i>
+                  </div>
+                  <div className="info-content-v13">
+                    <h4>Email</h4>
+                    <a href="mailto:moekyawaung13721@gmail.com">moekyawaung13721@gmail.com</a>
+                  </div>
+                </div>
+
+                <div className="info-item-v13">
+                  <div className="info-icon-v13">
+                    <i className="fas fa-phone"></i>
+                  </div>
+                  <div className="info-content-v13">
+                    <h4>Phone</h4>
+                    <a href="tel:+959123456789">+95 9 123 456 789</a>
+                  </div>
+                </div>
+
+                <div className="info-item-v13">
+                  <div className="info-icon-v13">
+                    <i className="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div className="info-content-v13">
+                    <h4>Location</h4>
+                    <p>Yangon, Myanmar</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="social-section-v13">
+                <h4>Connect With Me</h4>
+                <div className="social-links-v13">
+                  {socialLinks.map((social, i) => (
+                    <a
+                      key={i}
+                      href={social.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="social-link-v13"
+                      style={{ '--social-color': social.color }}
+                      title={social.label}
+                    >
+                      <i className={social.icon}></i>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Availability Badge */}
+              <div className="availability-badge-v13">
+                <div className="status-indicator">
+                  <span className="status-dot-v13"></span>
+                  <span>Available for Projects</span>
+                </div>
+                <p>Accepting new Android projects for 2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactV13;
+
+                      
